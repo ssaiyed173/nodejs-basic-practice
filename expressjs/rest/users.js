@@ -15,6 +15,13 @@ module.exports.add = (user)=>
 {
     users.push(user)
 }
-module.exports.getUsers = ()=>{ 
+module.exports.getUsers = () =>{ 
     return users
+}
+module.exports.getUser = (id) => {
+	for(user of users){
+       if(user.id == id){
+		   return user
+	   }
+    }
 }
