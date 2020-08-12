@@ -25,3 +25,14 @@ module.exports.getUser = (id) => {
 	   }
     }
 }
+module.exports.delete = (id) => {
+    var userIndex = getUserIndex(id)
+    users.splice(userIndex,1)
+}
+function getUserIndex(id){
+    for(i=0; i<users.length; i++){
+        if(users[i].id == id){
+            return i
+        }
+    }
+}
