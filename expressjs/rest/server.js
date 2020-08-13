@@ -5,9 +5,14 @@ const port = 80
 
 const app = express()
 app.use(bodyParser.json())
+
 app.delete('/rest/users/delete/:id', (request, response) => {
     users.delete(request.params.id)
     response.send({message: 'User Deleted'})
+})
+app.put('/rest/users/update/:id',(request, response) => {
+    users.update(request.params.id,request.body)
+    response.send({message: 'User Updated'})
 })
 app.post('/rest/users/add', (request, response) =>{
     users.add(request.body)
